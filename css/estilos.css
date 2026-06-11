@@ -151,32 +151,44 @@ header{
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:50px;
-    padding:60px 8%;
+    flex-direction: column;
+    gap:30px;
+    margin:50px 8%;
+    padding:40px;
+    background:white;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
 }
 
 .video{
-    flex:1;
+    flex:9;
 }
 
 .video video{
     width:100%;
-    max-width:600px;
+    max-width:900px;
     border-radius:15px;
 }
 
 .descripcion{
-    flex:1;
-    color:#333;
-    line-height:1.8;
+    line-height: 1.8;
+    color: #333;
+}
+
+.descripcion p{
+    margin-bottom: 20px;
 }
 
 .descripcion ul{
-    padding-left:20px;
+    padding-left: 25px;
 }
 
 .descripcion li{
-    margin-bottom:10px;
+    margin-bottom: 12px;
+}
+
+.descripcion strong{
+    color: #143f82;
 }
 
 .futuro{
