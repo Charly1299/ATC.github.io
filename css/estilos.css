@@ -276,7 +276,7 @@ header{
     height:220px;
     border-radius:50%;
     object-fit:cover;
-    object-position:40% 60%;
+    object-position: center;
     transition: all 0.8s ease;
 }
 
