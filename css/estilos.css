@@ -287,7 +287,6 @@ header{
     align-items: start;
 }
 
-.proyecto > a > img,
 .proyecto > img{
     width:220px;
     height:220px;
@@ -297,8 +296,7 @@ header{
     transition: all 0.8s ease;
 }
 
-.proyecto > a > img:hover,
-.proyecto > img:hover{
+.proyecto img:hover{
     transform: scale(1.15);
     box-shadow: 0 10px 25px rgba(0,0,0,.3);
 }
@@ -319,10 +317,18 @@ header{
     text-align:center;
 }
 
-.proyecto p{
-    margin-top: 15px;
-    min-height: 50px; /* mismo espacio para todos los textos */
-}   
+.proyecto a{
+    color:#000;
+    text-decoration:none;
+}
+
+.proyecto a:visited{
+    color:#000;
+}
+
+.proyecto a:hover{
+    color:#143f82;
+}
 
 .icono-ubicacion{
     width:14px;
