@@ -370,3 +370,79 @@ footer{
     flex:1;
 }
 
+@media (max-width: 768px){
+
+    /* Encabezado */
+    header{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .logo img{
+        height: 50px;
+    }
+
+    .btn{
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    /* Portada */
+    .hero{
+        height: 450px;
+    }
+
+    .overlay h1{
+        font-size: 2rem;
+    }
+
+    .overlay p{
+        font-size: 1rem;
+    }
+
+    /* Video y descripción */
+    .video-descripcion{
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .video video{
+        max-width: 100%;
+    }
+
+    /* Servicios */
+    .circulos{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .servicio img{
+        width: 180px;
+        height: 180px;
+    }
+
+    /* Proyectos */
+    .galeria{
+        grid-template-columns: 1fr;
+    }
+
+    .proyecto > img{
+        width: 180px;
+        height: 180px;
+    }
+
+    /* Footer */
+    footer{
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .empresa,
+    .local,
+    .contacto{
+        text-align: center;
+    }
+}
