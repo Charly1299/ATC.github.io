@@ -46,3 +46,17 @@ document.querySelectorAll(".imagenes-extra img").forEach(img => {
 visor.addEventListener("mouseleave", () => {
     visor.classList.remove("activo");
 });
+
+document.querySelectorAll(".servicio").forEach(servicio => {
+
+    servicio.addEventListener("click", () => {
+
+        document.querySelectorAll(".servicio").forEach(item => {
+            if(item !== servicio){
+                item.classList.remove("activo");
+            }
+        });
+
+        servicio.classList.toggle("activo");
+    });
+});
