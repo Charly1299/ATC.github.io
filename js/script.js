@@ -60,3 +60,14 @@ document.querySelectorAll(".servicio").forEach(servicio => {
         servicio.classList.toggle("activo");
     });
 });
+document.querySelectorAll(".ampliar-imagen").forEach(img => {
+
+    img.addEventListener("click", () => {
+        imagenGrande.src = img.src;
+        visor.classList.add("activo");
+    });
+
+});
+visor.addEventListener("click", () => {
+    visor.classList.remove("activo");
+});
