@@ -94,7 +94,7 @@ header{
         rgba(255,255,255,0.15),
         rgba(255,255,255,0.15)
     ),
-    url("../assets/fondo.JPG");
+    url("../assets/fondo.webp");
 
     background-size: cover;
     background-position: center 0%;
@@ -242,7 +242,7 @@ header{
     padding:12px 50px;
     border-radius:15px;
     transition: all 1s ease;
-    animation: pulse 2s infinite;
+    animation: none;
     
 }
 
