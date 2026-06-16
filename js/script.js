@@ -43,7 +43,7 @@ document.querySelectorAll(".imagenes-extra img").forEach(img => {
 
 });
 
-visor.addEventListener("click", () => {
+visor.addEventListener("mouseleave", () => {
     visor.classList.remove("activo");
 });
 
