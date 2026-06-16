@@ -36,14 +36,14 @@ const imagenGrande = document.getElementById("imagen-grande");
 
 document.querySelectorAll(".imagenes-extra img").forEach(img => {
 
-    img.addEventListener("mouseenter", () => {
+    img.addEventListener("click", () => {
         imagenGrande.src = img.src;
         visor.classList.add("activo");
     });
 
 });
 
-visor.addEventListener("mouseleave", () => {
+visor.addEventListener("click", () => {
     visor.classList.remove("activo");
 });
 
