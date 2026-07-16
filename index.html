@@ -1,312 +1,106 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <link rel="preload" href="assets/fondo.webp" as="image">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ATC - Construcción y Espacios Públicos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ATC: diseño, construcción e instalaciones para espacios que perduran.">
+  <title>ATC | Construcción que transforma</title>
+  <link rel="preload" href="assets/fondo.webp" as="image">
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
-
-<div id="visor-imagen">
+<body>
+  <div class="lightbox" id="visor-imagen" aria-hidden="true" role="dialog" aria-label="Vista ampliada de imagen">
+    <button class="lightbox__close" type="button" aria-label="Cerrar imagen">×</button>
     <img id="imagen-grande" src="" alt="">
-</div>
+  </div>
 
-<body id="inicio">
-<header>
-    <div class="logo">
-        <a href="#inicio">
-            <img src="assets/logo.png" alt="ATC">
-        </a>    
-    </div>
+  <header class="site-header" id="inicio">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="logo" href="#inicio" aria-label="ATC, inicio"><img src="assets/logo.png" alt="ATC"></a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">Menú <span></span></button>
+      <div class="menu">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a class="menu__contact" href="#contacto">Contáctanos <span>↗</span></a>
+      </div>
+    </nav>
+  </header>
 
-    <a href="https://wa.me/5554260663" class="whatsapp-float" target="_blank">
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__shade"></div>
+      <div class="hero__content container">
+        <p class="eyebrow eyebrow--light">Advanced Technical Concepts</p>
+        <h1 id="hero-title">Construimos espacios que <em>mueven</em> el futuro.</h1>
+        <p class="hero__lead">Planeación, obra e instalaciones con un equipo que convierte cada reto en una solución duradera.</p>
+        <a class="button button--light" href="#proyectos">Conoce nuestro trabajo <span>↓</span></a>
+      </div>
+      <p class="hero__scroll">Desliza para descubrir <span></span></p>
+    </section>
 
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt= "WhatsApp">
-    </a>
+    <section class="intro container" id="nosotros" aria-labelledby="intro-title">
+      <div class="intro__heading">
+        <p class="eyebrow">Nuestra forma de trabajar</p>
+        <h2 id="intro-title">La técnica cobra sentido cuando mejora la vida cotidiana.</h2>
+      </div>
+      <div class="intro__copy">
+        <p>Somos un equipo multidisciplinario de profesionales, supervisores y personal técnico que combina planeación rigurosa, ejecución precisa y atención cercana.</p>
+        <p>Desarrollamos obras habitacionales, comerciales, industriales e institucionales con seguridad, calidad y funcionalidad en cada detalle.</p>
+      </div>
+    </section>
 
-    <a href="#proyectos" class="btn">
-        PROYECTOS
-    </a>
-    
-    <a href="#servicios" class="btn">
-        SERVICIOS
-    </a>
-</header>
+    <section class="principles">
+      <div class="container principles__grid">
+        <article class="principle reveal"><span>01</span><h3>Visión</h3><p>Ser la opción confiable en edificación y transformación de espacios.</p></article>
+        <article class="principle reveal"><span>02</span><h3>Propósito</h3><p>Crear obras que optimizan recursos y generan valor real para cada cliente.</p></article>
+        <article class="principle reveal"><span>03</span><h3>Compromiso</h3><p>Construir relaciones duraderas, proyecto tras proyecto.</p></article>
+      </div>
+    </section>
 
-<section class="hero">
-    <div class="overlay">
-        <h1>
-            Construimos, renovamos y transformamos espacios para el <span class="futuro">FUTURO</span>
-        </h1>
+    <section class="story container">
+      <div class="story__media"><video autoplay muted loop playsinline poster="assets/construccion.jpeg"><source src="assets/video.mp4" type="video/mp4"></video></div>
+      <div class="story__content">
+        <p class="eyebrow">Experiencia integral</p>
+        <h2>Un solo equipo para llevar la obra de la idea a la realidad.</h2>
+        <ul>
+          <li><strong>Terracerías</strong><span>Terrenos, pavimentos, excavaciones y acarreos.</span></li>
+          <li><strong>Obra civil</strong><span>Cimentaciones, estructuras, losas y urbanización.</span></li>
+          <li><strong>Acabados</strong><span>Interiores funcionales, durables y bien resueltos.</span></li>
+          <li><strong>Espacios especializados</strong><span>Oficinas, producción y aulas de alto desempeño.</span></li>
+        </ul>
+      </div>
+    </section>
 
-        <p>
-            Especialistas en diseño e instalaciones, adecuándonos al servicio total que requiera cada cliente, obteniendo al final <span class="amigo">“Un amigo más y socio de negocios”.</span>
-        </p>    
-    </div>
-</section>
-
-<section class="info">
-    <div class="info-item">
-        <h2>Misión</h2>
-        <p>
-            Ser la mejor opción en edificación del segmento habitacional,
-            comercial, industrial e institucional.
-        </p>
-    </div>
-
-    <div class="info-item">
-        <h2>Objetivo</h2>
-        <p>
-            La construcción, planeación, estudio, proyecto,
-            mantenimiento y reparación de obras.
-        </p>
-    </div>
-</section>
-
-<section class="video-descripcion">
-    <div class="video">
-        <video autoplay muted loop playsinline>
-            <source src="assets/video.mp4" type="video/mp4">  
-        </video>
-    </div>
-
-    <div class="descripcion">
-        <p>
-            Contamos con un equipo multidisciplinario de profesionales, supervisores y personal técnico altamente capacitado, comprometido con la seguridad, la calidad y la excelencia en cada proyecto que desarrollamos.
-         </p>
-
-        <p>
-            Nuestra experiencia nos permite planear, ejecutar y administrar obras de distintos niveles de complejidad, garantizando soluciones integrales que cumplen con los más altos estándares de construcción y las necesidades específicas de cada cliente.
-        </p>
-        <p>
-            Ofrecemos servicios especializados en:
-        </p>
-
-    <ul>
-        <li>
-            <strong>Terracerías:</strong> Diseño y mejoramiento de terrenos, estacionamientos, carpetas asfálticas, movimientos de tierra, excavaciones y acarreos.
-        </li>
-
-        <li>
-            <strong>Obra Civil:</strong> Cimentaciones, muros de block, estructuras de concreto, losas, muros de contención, banquetas, guarniciones, firmes y aplanados.
-        </li>
-
-        <li>
-            <strong>Acabados:</strong> Aplicación de pastas, tabla roca, plafones, cancelería, herrería, pisos, escaleras y barandales.
-        </li>
-
-        <li>
-            <strong>Edificios de Oficinas:</strong> Construcción de edificios de uno y dos niveles con acabados de alta calidad y excelente funcionalidad.
-        </li>
-
-        <li>
-            <strong>Edificios de Producción:</strong> Diseñados para soportar grandes cargas y vibraciones generadas por maquinaria y procesos industriales.
-        </li>
-
-        <li>
-            <strong>Edificios de Aulas:</strong> Construcciones educativas desarrolladas bajo estrictos estándares de seguridad estructural.
-        </li>
-    </ul>
-    <h3>
-        En ATC trabajamos con un enfoque orientado a resultados, brindando soluciones confiables que generan valor, optimizan recursos y garantizan la satisfacción de nuestros clientes en cada etapa del proyecto.
-    </h3>
-    </div>
-</section>
-
-<section class="encabezado-servicios" id="servicios">
-
-    <h1>
-        Una obra es económica cuando se conjunta el mejor producto al precio correcto
-    </h1>
-
-    <div class="circulos">
-
-        <div class="servicio">
-            <img src="assets/diseno.png">
-
-             <div class="imagenes-extra">
-                    <img src="assets/diseno1.jpg">
-                    <img src="assets/diseno2.jpg">          
-            </div>
-
-            <h3>Diseño y Planificación</h3>
+    <section class="services" id="servicios" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">Lo que hacemos</p><h2 id="services-title">Soluciones pensadas para avanzar.</h2></div><p>Integramos las disciplinas necesarias para que cada proyecto llegue más lejos.</p></div>
+        <div class="service-grid">
+          <article class="service-card"><img src="assets/diseno.png" alt="Plano y material de diseño arquitectónico"><div><span>01</span><h3>Diseño y planificación</h3><p>Estudios, proyecto y una ruta clara antes de construir.</p></div></article>
+          <article class="service-card"><img src="assets/construccion.jpeg" alt="Personal trabajando en una obra"><div><span>02</span><h3>Construcción</h3><p>Coordinación y ejecución con control en cada etapa.</p></div></article>
+          <article class="service-card"><img src="assets/instalacion.jpg" alt="Instalación técnica en obra"><div><span>03</span><h3>Instalaciones y mantenimiento</h3><p>Sistemas eficientes para que todo siga funcionando.</p></div></article>
         </div>
+      </div>
+    </section>
 
-        <div class="servicio">
-            <img src="assets/construccion.jpeg">
+    <section class="projects container" id="proyectos" aria-labelledby="projects-title">
+      <div class="section-heading"><div><p class="eyebrow">Obras realizadas</p><h2 id="projects-title">Ideas convertidas en realidad.</h2></div><p>Selecciona un proyecto para descubrir su galería.</p></div>
+      <div class="project-grid">
+        <article class="project project--featured" data-gallery="assets/magdalena.jpeg|assets/magdalena1.jpeg|assets/magdalena2.jpeg"><img src="assets/magdalena.jpeg" alt="Proyecto en Alcaldía Magdalena Contreras"><div><p>Espacio público</p><h3>Alcaldía Magdalena Contreras</h3><a href="https://maps.app.goo.gl/FqDiitqrDyrmucKVA" target="_blank" rel="noreferrer">Ver ubicación ↗</a></div></article>
+        <article class="project" data-gallery="assets/salesiano1.webp|assets/salesiano2.webp|assets/salesiano3.webp|assets/salesiano4.webp|assets/salesiano5.webp|assets/salesiano6.webp|assets/salesiano7.webp"><img src="assets/parque-salesiano.webp" alt="Parque Salesiano"><div><p>Espacio público</p><h3>Parque Salesiano</h3><a href="https://maps.google.com/?q=Parque+Salesiano+Miguel+Hidalgo+CDMX" target="_blank" rel="noreferrer">Ver ubicación ↗</a></div></article>
+        <article class="project" data-gallery="assets/ramon-lopez.png"><img src="assets/ramon-lopez.png" alt="Jardín Ramón López Velarde"><div><p>Rehabilitación</p><h3>Jardín Ramón López Velarde</h3><a href="https://maps.app.goo.gl/Yb4M9vQJ4nyF8DhF7" target="_blank" rel="noreferrer">Ver ubicación ↗</a></div></article>
+        <article class="project" data-gallery="assets/pantitlan.png"><img src="assets/pantitlan.png" alt="Camellón en Avenida Pantitlán"><div><p>Infraestructura</p><h3>Camellón, Av. Pantitlán</h3><a href="https://maps.app.goo.gl/PtDvc74j6zNKTCnH6" target="_blank" rel="noreferrer">Ver ubicación ↗</a></div></article>
+        <article class="project" data-gallery="assets/cendi.jpg|assets/cendi1.jpg|assets/cendi2.jpg|assets/cendi3.jpg|assets/cendi4.jpg|assets/cendi5.jpg|assets/cendi6.jpg|assets/cendi7.jpg"><img src="assets/cendi.jpg" alt="CENDI La Magdalena"><div><p>Educación</p><h3>CENDI, La Magdalena</h3><a href="https://maps.app.goo.gl/X97RDeYEzPzAKK6A9" target="_blank" rel="noreferrer">Ver ubicación ↗</a></div></article>
+        <article class="project" data-gallery="assets/vialidades.jpeg|assets/vialidades1.jpeg|assets/vialidades2.jpeg"><img src="assets/vialidades.jpeg" alt="Trabajos de señalización vial"><div><p>Infraestructura</p><h3>Trabajos de señalización</h3><button type="button">Ver galería ↗</button></div></article>
+      </div>
+    </section>
+  </main>
 
-             <div class="imagenes-extra">
-                    <img src="assets/construccion1.jpg">
-                    <img src="assets/construccion2.jpeg"> 
-                    <img src="assets/construccion3.jpeg">            
-            </div>
-
-            <h3>Construcción</h3>
-
-        </div>
-
-        <div class="servicio">
-            <img src="assets/instalacion.jpg">
-
-             <div class="imagenes-extra">
-                    <img src="assets/instalacion1.jpg">        
-                    <img src="assets/instalacion2.jpeg"> 
-            </div>
-
-            <h3>Instalación y Mantenimiento</h3>
-        </div>
-
-    </div>
-</section>
-
-<section id="proyectos">
-    <h3>PROYECTOS</h3>
-    <h1>Descubre cómo convertimos ideas en realidad</h1>
-    
-    <div class="galeria">
-
-        <div class="proyecto">
-                <img src="assets/magdalena.jpeg">
-
-                <div class="imagenes-extra">
-                    <img src="assets/magdalena.jpeg">
-                    <img src="assets/magdalena1.jpeg">
-                    <img src="assets/magdalena2.jpeg">
-                </div>
-
-            <h3>
-                <a href="https://maps.app.goo.gl/FqDiitqrDyrmucKVA" target="_blank">
-                <img src="assets/ubicacion.jpg" class="icono-ubicacion">
-                Alcaldia Magdalena Contreras 
-                </a>
-            </h3>
-        </div>
-
-        <div class="proyecto">
-                <img src="assets/parque-salesiano.webp">
-
-                <div class="imagenes-extra">
-                    <img src="assets/salesiano1.webp">
-                    <img src="assets/salesiano2.webp">
-                    <img src="assets/salesiano3.webp">
-                    <img src="assets/salesiano4.webp">
-                    <img src="assets/salesiano5.webp">
-                    <img src="assets/salesiano6.webp">
-                    <img src="assets/salesiano7.webp">
-                </div>
-
-            <h3>
-                <a href="https://maps.google.com/?q=Parque+Salesiano+Miguel+Hidalgo+CDMX" target="_blank">
-                <img src="assets/ubicacion.jpg" class="icono-ubicacion">
-                Parque Salesiano, Miguel Hidalgo
-                </a>
-            </h3>
-        </div>
-
-        <div class="proyecto">
-                <img src="assets/ramon-lopez.png" class="ampliar-imagen">
-
-                <h3>
-                <a href="https://maps.app.goo.gl/Yb4M9vQJ4nyF8DhF7" target="_blank">
-                <img src="assets/ubicacion.jpg" class="icono-ubicacion">
-                Jardín Ramón López Velarde
-                </a>
-            </h3>
-        </div>
-
-        <div class="proyecto">
-                <img src="assets/pantitlan.png" class="ampliar-imagen">
-
-                <h3>
-                <a href="https://maps.app.goo.gl/PtDvc74j6zNKTCnH6" target="_blank">
-                <img src="assets/ubicacion.jpg" class="icono-ubicacion">
-                Camellón, Av.Pantitlan 
-                </a>
-            </h3>
-        </div>
-
-        <div class="proyecto">
-                <img src="assets/san-nicolas.png" class="ampliar-imagen">
-                
-                <h3>
-                <a href="https://maps.app.goo.gl/CEKyagqNmrCo7rfV7" target="_blank">
-                <img src="assets/ubicacion.jpg" class="icono-ubicacion">
-                Col. San Nicolas Totolapan
-                </a>
-            </h3>
-        </div>
-
-        <div class="proyecto">
-                <img src="assets/cendi.jpg">
-                
-                  <div class="imagenes-extra">
-                    <img src="assets/cendi1.jpg">
-                    <img src="assets/cendi2.jpg">
-                    <img src="assets/cendi3.jpg">
-                    <img src="assets/cendi4.jpg">
-                    <img src="assets/cendi5.jpg">
-                    <img src="assets/cendi6.jpg">
-                    <img src="assets/cendi7.jpg">
-                </div>
-
-                <h3>
-                <a href="https://maps.app.goo.gl/X97RDeYEzPzAKK6A9" target="_blank">
-                <img src="assets/ubicacion.jpg" class="icono-ubicacion">
-                CENDI, La Magadalena 
-                </a>
-            </h3>
-        </div>
-
-        <div class="proyecto">
-                <img src="assets/miguel-hidalgo.png" class="ampliar-imagen">
-                
-                  <div class="imagenes-extra">
-                    <img src="assets/miguel-hidalgo1.png">
-                </div>
-
-                <h3>
-                <a href="https://maps.app.goo.gl/7ND4SYEK9E2wbBzA9" target="_blank">
-                <img src="assets/ubicacion.jpg" class="icono-ubicacion">
-                Rehabilitación, Alcaldia Miguel Hidalgo(zona 1)
-                </a>
-            </h3>
-        </div>
-
-        <div class="proyecto">
-            <img src="assets/vialidades.jpeg">
-            
-              <div class="imagenes-extra">
-                    <img src="assets/vialidades1.jpeg">
-                    <img src="assets/vialidades2.jpeg">
-                </div>
-
-            <h3>
-                Trabajos de señalización
-            </h3>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <div class="empresa">
-       Advanced Technical Concepts, S.A de C.V.
-       <p>Nombre comercial: ATC</p>
-    </div>
-
-    <div class="local">
-        Cine Mexicano #376 Casa 19 Planta Baja, 
-        Col. granjas Estrella, Iztapalapa 
-        C.P 09880 Ciudad de México
-    </div>
-
-    <div class="contacto">
-        Tel: (55) 5426 0663
-        adteco@hotmail.com
-    </div>
-</footer>
-<script src="js/script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <footer id="contacto">
+    <div class="container footer__grid"><div><img src="assets/logo.png" alt="ATC" class="footer__logo"><p>Construcción con visión, precisión y compromiso.</p></div><div><p class="footer__label">Visítanos</p><address>Cine Mexicano #376, Casa 19, Planta Baja<br>Col. Granjas Estrella, Iztapalapa<br>Ciudad de México, C.P. 09880</address></div><div><p class="footer__label">Hablemos</p><a href="tel:+525554260663">(55) 5426 0663</a><a href="mailto:adteco@hotmail.com">adteco@hotmail.com</a></div></div>
+    <div class="container footer__bottom"><span>© 2026 Advanced Technical Concepts, S.A. de C.V.</span><a href="#inicio">Volver arriba ↑</a></div>
+  </footer>
+  <a href="https://wa.me/525554260663" class="whatsapp-float" target="_blank" rel="noreferrer" aria-label="Escríbenos por WhatsApp">⌕<span>WhatsApp</span></a>
+  <script src="js/script.js"></script>
 </body>
 </html>

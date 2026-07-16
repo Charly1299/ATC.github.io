@@ -1,73 +1,48 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('.site-header');
+  const updateHeaderTone = () => {
+    const progress = Math.min(window.scrollY / 520, 1);
+    header.style.setProperty('--header-opacity', (.28 + progress * .54).toFixed(2));
+    header.style.setProperty('--header-line-opacity', (.08 + progress * .12).toFixed(2));
+  };
 
-    const elementos = document.querySelectorAll(".info-item");
+  window.addEventListener('scroll', updateHeaderTone, { passive: true });
+  updateHeaderTone();
 
-    function mostrarElementos() {
-        elementos.forEach((elemento) => {
-            const posicion = elemento.getBoundingClientRect().top;
-            const pantalla = window.innerHeight;
+  const menuButton = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.menu');
+  menuButton.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('open');
+    menuButton.setAttribute('aria-expanded', isOpen);
+  });
+  menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    menu.classList.remove('open'); menuButton.setAttribute('aria-expanded', 'false');
+  }));
 
-            if (posicion < pantalla - 100) {
-                elemento.classList.add("show");
-            }
-        });
+  const viewer = document.querySelector('#visor-imagen');
+  const viewerImage = document.querySelector('#imagen-grande');
+  let activeGallery = [];
+  let activeIndex = 0;
+  const closeViewer = () => { viewer.classList.remove('activo'); viewer.setAttribute('aria-hidden', 'true'); };
+  document.querySelector('.lightbox__close').addEventListener('click', closeViewer);
+  viewer.addEventListener('click', event => { if (event.target === viewer) closeViewer(); });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') closeViewer(); });
+  document.addEventListener('keydown', event => {
+    if (!viewer.classList.contains('activo') || activeGallery.length < 2) return;
+    if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+      activeIndex = (activeIndex + (event.key === 'ArrowRight' ? 1 : -1) + activeGallery.length) % activeGallery.length;
+      viewerImage.src = activeGallery[activeIndex];
     }
+  });
 
-    window.addEventListener("scroll", mostrarElementos);
-    mostrarElementos();
-
-    document.querySelectorAll(".proyecto").forEach(proyecto => {
-        proyecto.addEventListener("click", () => {
-
-            document.querySelectorAll(".proyecto").forEach(item => {
-                if(item !== proyecto){
-                    item.classList.remove("activo");
-                }
-            });
-
-            proyecto.classList.toggle("activo");
-        });
+  document.querySelectorAll('.project').forEach(project => {
+    project.addEventListener('click', event => {
+      if (event.target.closest('a')) return;
+      activeGallery = project.dataset.gallery.split('|');
+      activeIndex = 0;
+      viewerImage.src = activeGallery[activeIndex];
+      viewerImage.alt = project.querySelector('h3').textContent;
+      viewer.classList.add('activo'); viewer.setAttribute('aria-hidden', 'false');
     });
-
-});
-
-const visor = document.getElementById("visor-imagen");
-const imagenGrande = document.getElementById("imagen-grande");
-
-document.querySelectorAll(".imagenes-extra img").forEach(img => {
-
-    img.addEventListener("click", () => {
-        imagenGrande.src = img.src;
-        visor.classList.add("activo");
-    });
-
-});
-
-visor.addEventListener("mouseleave", () => {
-    visor.classList.remove("activo");
-});
-
-document.querySelectorAll(".servicio").forEach(servicio => {
-
-    servicio.addEventListener("click", () => {
-
-        document.querySelectorAll(".servicio").forEach(item => {
-            if(item !== servicio){
-                item.classList.remove("activo");
-            }
-        });
-
-        servicio.classList.toggle("activo");
-    });
-});
-document.querySelectorAll(".ampliar-imagen").forEach(img => {
-
-    img.addEventListener("click", () => {
-        imagenGrande.src = img.src;
-        visor.classList.add("activo");
-    });
-
-});
-visor.addEventListener("click", () => {
-    visor.classList.remove("activo");
+  });
 });
