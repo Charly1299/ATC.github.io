@@ -144,7 +144,7 @@ p {
 .eyebrow {
   margin-bottom: 18px;
   color: var(--coral);
-  font: 500 .67rem 'DM Mono', monospace;
+  font: 500 .95rem 'DM Mono', monospace;
   letter-spacing: .13em;
   text-transform: uppercase;
 }
@@ -515,6 +515,45 @@ p {
   line-height: 1;
 }
 
+.lightbox__control {
+  position: absolute;
+  top: 50%;
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border: 3px solid var(--yellow);
+  border-radius: 50%;
+  color: var(--navy);
+  cursor: pointer;
+  background: #fff;
+  font-size: 2.4rem;
+  line-height: 1;
+  transform: translateY(-50%);
+}
+
+.lightbox__control--previous {
+  left: 30px;
+}
+
+.lightbox__control--next {
+  right: 30px;
+}
+
+.lightbox__control[hidden] {
+  display: none;
+}
+
+.lightbox__counter {
+  position: absolute;
+  bottom: 22px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: var(--navy);
+  background: var(--yellow);
+  font: 500 .72rem 'DM Mono', monospace;
+}
+
 .whatsapp-float {
   position: fixed;
   z-index: 30;
@@ -740,5 +779,24 @@ address,
   .whatsapp-float {
     right: 16px;
     bottom: 16px;
+  }
+
+  .lightbox {
+    padding: 24px;
+  }
+
+  .lightbox__control {
+    width: 46px;
+    height: 46px;
+    border-width: 2px;
+    font-size: 2rem;
+  }
+
+  .lightbox__control--previous {
+    left: 12px;
+  }
+
+  .lightbox__control--next {
+    right: 12px;
   }
 }

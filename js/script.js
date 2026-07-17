@@ -21,26 +21,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const viewer = document.querySelector('#visor-imagen');
   const viewerImage = document.querySelector('#imagen-grande');
+  const previousButton = document.querySelector('.lightbox__control--previous');
+  const nextButton = document.querySelector('.lightbox__control--next');
+  const galleryCounter = document.querySelector('.lightbox__counter');
   let activeGallery = [];
   let activeIndex = 0;
+  let touchStartX = 0;
   const closeViewer = () => { viewer.classList.remove('activo'); viewer.setAttribute('aria-hidden', 'true'); };
+  const showGalleryImage = (index) => {
+    activeIndex = (index + activeGallery.length) % activeGallery.length;
+    viewerImage.src = activeGallery[activeIndex];
+    const hasMultipleImages = activeGallery.length > 1;
+    previousButton.hidden = !hasMultipleImages;
+    nextButton.hidden = !hasMultipleImages;
+    galleryCounter.textContent = hasMultipleImages ? `${activeIndex + 1} / ${activeGallery.length}` : '';
+  };
   document.querySelector('.lightbox__close').addEventListener('click', closeViewer);
   viewer.addEventListener('click', event => { if (event.target === viewer) closeViewer(); });
   document.addEventListener('keydown', event => { if (event.key === 'Escape') closeViewer(); });
   document.addEventListener('keydown', event => {
     if (!viewer.classList.contains('activo') || activeGallery.length < 2) return;
     if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
-      activeIndex = (activeIndex + (event.key === 'ArrowRight' ? 1 : -1) + activeGallery.length) % activeGallery.length;
-      viewerImage.src = activeGallery[activeIndex];
+      showGalleryImage(activeIndex + (event.key === 'ArrowRight' ? 1 : -1));
     }
   });
+  previousButton.addEventListener('click', () => showGalleryImage(activeIndex - 1));
+  nextButton.addEventListener('click', () => showGalleryImage(activeIndex + 1));
+  viewer.addEventListener('touchstart', event => { touchStartX = event.changedTouches[0].screenX; }, { passive: true });
+  viewer.addEventListener('touchend', event => {
+    const distance = event.changedTouches[0].screenX - touchStartX;
+    if (activeGallery.length > 1 && Math.abs(distance) > 45) showGalleryImage(activeIndex + (distance < 0 ? 1 : -1));
+  }, { passive: true });
 
   document.querySelectorAll('.project').forEach(project => {
     project.addEventListener('click', event => {
       if (event.target.closest('a')) return;
       activeGallery = project.dataset.gallery.split('|');
-      activeIndex = 0;
-      viewerImage.src = activeGallery[activeIndex];
+      showGalleryImage(0);
       viewerImage.alt = project.querySelector('h3').textContent;
       viewer.classList.add('activo'); viewer.setAttribute('aria-hidden', 'false');
     });

@@ -11,7 +11,10 @@
 <body>
   <div class="lightbox" id="visor-imagen" aria-hidden="true" role="dialog" aria-label="Vista ampliada de imagen">
     <button class="lightbox__close" type="button" aria-label="Cerrar imagen">×</button>
+    <button class="lightbox__control lightbox__control--previous" type="button" aria-label="Imagen anterior">‹</button>
     <img id="imagen-grande" src="" alt="">
+    <button class="lightbox__control lightbox__control--next" type="button" aria-label="Siguiente imagen">›</button>
+    <p class="lightbox__counter" aria-live="polite"></p>
   </div>
 
   <header class="site-header" id="inicio">
@@ -22,7 +25,7 @@
         <a href="#nosotros">Nosotros</a>
         <a href="#servicios">Servicios</a>
         <a href="#proyectos">Proyectos</a>
-        <a class="menu__contact" href="#contacto">Contáctanos <span>↗</span></a>
+        <a class="menu__contact" href="#contacto">Contáctanos<span>↗</span></a>
       </div>
     </nav>
   </header>
@@ -47,14 +50,15 @@
       <div class="intro__copy">
         <p>Somos un equipo multidisciplinario de profesionales, supervisores y personal técnico que combina planeación rigurosa, ejecución precisa y atención cercana.</p>
         <p>Desarrollamos obras habitacionales, comerciales, industriales e institucionales con seguridad, calidad y funcionalidad en cada detalle.</p>
+        <p>Trabajamos de la mano con instituciones públicas, empresas y comunidades para ofrecer soluciones integrales adaptadas a las necesidades de cada proyecto.</p>
       </div>
     </section>
 
     <section class="principles">
       <div class="container principles__grid">
-        <article class="principle reveal"><span>01</span><h3>Visión</h3><p>Ser la opción confiable en edificación y transformación de espacios.</p></article>
-        <article class="principle reveal"><span>02</span><h3>Propósito</h3><p>Crear obras que optimizan recursos y generan valor real para cada cliente.</p></article>
-        <article class="principle reveal"><span>03</span><h3>Compromiso</h3><p>Construir relaciones duraderas, proyecto tras proyecto.</p></article>
+        <article class="principle reveal"><h3>Visión</h3><p>Ser la opción confiable en edificación y transformación de espacios.</p></article>
+        <article class="principle reveal"><h3>Propósito</h3><p>Crear obras que optimizan recursos y generan valor real para cada cliente.</p></article>
+        <article class="principle reveal"><h3>Compromiso</h3><p>Construir relaciones duraderas, proyecto tras proyecto.</p></article>
       </div>
     </section>
 
@@ -76,9 +80,9 @@
       <div class="container">
         <div class="section-heading"><div><p class="eyebrow">Lo que hacemos</p><h2 id="services-title">Soluciones pensadas para avanzar.</h2></div><p>Integramos las disciplinas necesarias para que cada proyecto llegue más lejos.</p></div>
         <div class="service-grid">
-          <article class="service-card"><img src="assets/diseno.png" alt="Plano y material de diseño arquitectónico"><div><span>01</span><h3>Diseño y planificación</h3><p>Estudios, proyecto y una ruta clara antes de construir.</p></div></article>
-          <article class="service-card"><img src="assets/construccion.jpeg" alt="Personal trabajando en una obra"><div><span>02</span><h3>Construcción</h3><p>Coordinación y ejecución con control en cada etapa.</p></div></article>
-          <article class="service-card"><img src="assets/instalacion.jpg" alt="Instalación técnica en obra"><div><span>03</span><h3>Instalaciones y mantenimiento</h3><p>Sistemas eficientes para que todo siga funcionando.</p></div></article>
+          <article class="service-card"><img src="assets/diseno.png" alt="Plano y material de diseño arquitectónico"><div><h3>Diseño y planificación</h3><p>Estudios, proyecto y una ruta clara antes de construir.</p></div></article>
+          <article class="service-card"><img src="assets/construccion.jpeg" alt="Personal trabajando en una obra"><div><h3>Construcción</h3><p>Coordinación y ejecución con control en cada etapa.</p></div></article>
+          <article class="service-card"><img src="assets/instalacion.jpg" alt="Instalación técnica en obra"><div><h3>Instalaciones y mantenimiento</h3><p>Sistemas eficientes para que todo siga funcionando.</p></div></article>
         </div>
       </div>
     </section>
@@ -87,10 +91,10 @@
       <div class="section-heading"><div><p class="eyebrow">Obras realizadas</p><h2 id="projects-title">Ideas convertidas en realidad.</h2></div><p>Selecciona un proyecto para descubrir su galería.</p></div>
       <div class="project-grid">
         <article class="project project--featured" data-gallery="assets/magdalena.jpeg|assets/magdalena1.jpeg|assets/magdalena2.jpeg"><img src="assets/magdalena.jpeg" alt="Proyecto en Alcaldía Magdalena Contreras"><div><p>Espacio público</p><h3>Alcaldía Magdalena Contreras</h3><a href="https://maps.app.goo.gl/FqDiitqrDyrmucKVA" target="_blank" rel="noreferrer">Ver ubicación ↗</a></div></article>
-        <article class="project" data-gallery="assets/salesiano1.webp|assets/salesiano2.webp|assets/salesiano3.webp|assets/salesiano4.webp|assets/salesiano5.webp|assets/salesiano6.webp|assets/salesiano7.webp"><img src="assets/parque-salesiano.webp" alt="Parque Salesiano"><div><p>Espacio público</p><h3>Parque Salesiano</h3><a href="https://maps.google.com/?q=Parque+Salesiano+Miguel+Hidalgo+CDMX" target="_blank" rel="noreferrer">Ver ubicación ↗</a></div></article>
+        <article class="project" data-gallery="assets/salesiano1.png|assets/salesiano2.webp|assets/salesiano3.webp|assets/salesiano4.webp|assets/salesiano5.webp"><img src="assets/parque-salesiano.webp" alt="Parque Salesiano"><div><p>Espacio público</p><h3>Parque Salesiano</h3><a href="https://maps.google.com/?q=Parque+Salesiano+Miguel+Hidalgo+CDMX" target="_blank" rel="noreferrer">Ver ubicación ↗</a></div></article>
         <article class="project" data-gallery="assets/ramon-lopez.png"><img src="assets/ramon-lopez.png" alt="Jardín Ramón López Velarde"><div><p>Rehabilitación</p><h3>Jardín Ramón López Velarde</h3><a href="https://maps.app.goo.gl/Yb4M9vQJ4nyF8DhF7" target="_blank" rel="noreferrer">Ver ubicación ↗</a></div></article>
         <article class="project" data-gallery="assets/pantitlan.png"><img src="assets/pantitlan.png" alt="Camellón en Avenida Pantitlán"><div><p>Infraestructura</p><h3>Camellón, Av. Pantitlán</h3><a href="https://maps.app.goo.gl/PtDvc74j6zNKTCnH6" target="_blank" rel="noreferrer">Ver ubicación ↗</a></div></article>
-        <article class="project" data-gallery="assets/cendi.jpg|assets/cendi1.jpg|assets/cendi2.jpg|assets/cendi3.jpg|assets/cendi4.jpg|assets/cendi5.jpg|assets/cendi6.jpg|assets/cendi7.jpg"><img src="assets/cendi.jpg" alt="CENDI La Magdalena"><div><p>Educación</p><h3>CENDI, La Magdalena</h3><a href="https://maps.app.goo.gl/X97RDeYEzPzAKK6A9" target="_blank" rel="noreferrer">Ver ubicación ↗</a></div></article>
+        <article class="project" data-gallery="assets/cendi.jpg|assets/cendi1.jpg|assets/cendi3.jpg|assets/cendi4.png|assets/cendi5.jpg"><img src="assets/cendi.jpg" alt="CENDI La Magdalena"><div><p>Educación</p><h3>CENDI, La Magdalena</h3><a href="https://maps.app.goo.gl/X97RDeYEzPzAKK6A9" target="_blank" rel="noreferrer">Ver ubicación ↗</a></div></article>
         <article class="project" data-gallery="assets/vialidades.jpeg|assets/vialidades1.jpeg|assets/vialidades2.jpeg"><img src="assets/vialidades.jpeg" alt="Trabajos de señalización vial"><div><p>Infraestructura</p><h3>Trabajos de señalización</h3><button type="button">Ver galería ↗</button></div></article>
       </div>
     </section>
